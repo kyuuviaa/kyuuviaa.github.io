@@ -1,0 +1,348 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Babyyy | Our 3 Months</title>
+    <style>
+        :root {
+            --pink: #FF85A2;
+            --dark-pink: #E75480;
+            --white: #FFF9FB;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: var(--white);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            color: var(--dark-pink);
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: var(--pink);
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: var(--dark-pink);
+            border-bottom: 2px solid var(--pink);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .heart {
+            color: var(--pink);
+            font-size: 1.5rem;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+            margin: 0 5px;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -15px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            background: white;
+            border-radius: 10px 10px 0 0;
+            margin: 0 5px 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--dark-pink);
+            box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: var(--pink);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .sticker-box {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .sticker {
+            font-size: 4rem;
+            line-height: 1;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .sticker:hover {
+            transform: scale(1.2);
+        }
+        
+        /* New styles for the photo gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 150px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--dark-pink);
+            font-style: italic;
+            padding: 20px 0;
+            border-top: 1px solid #FFD6E0;
+        }
+        
+        .counter {
+            font-size: 1.2rem;
+            color: var(--dark-pink);
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #FFF0F4;
+            border-left: 4px solid var(--dark-pink);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+        
+        .memory-item {
+            padding: 15px;
+            margin: 15px 0;
+            background: #FFF9FA;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tab {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .sticker {
+                font-size: 3rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hii pretty babyyy <span class="heart">♥</span></h1>
+            <div class="subtitle">Our 3 month journey together</div>
+            <div class="counter" id="dayCounter">Counting every day since April 20, 2025...</div>
+        </header>
+        
+        <div class="highlight">
+            "Met November 20, 2024 - You said yes April 20, 2025 - Best days of my life since then"
+        </div>
+        
+        <div class="tab-bar">
+            <div class="tab active" onclick="changeTab(0)">Why You're Amazing</div>
+            <div class="tab" onclick="changeTab(1)">What I Want To Say</div>
+            <div class="tab" onclick="changeTab(2)">Just For You</div>
+            <div class="tab" onclick="changeTab(3)">Just Us on Video Call</div> <!-- NEW TAB ADDED HERE -->
+        </div>
+        
+        <div class="section">
+            <div class="tab-content active" id="tab1">
+                <h2>Here's Why You're Special</h2>
+                <p>Baby, I don't say it enough, but here's what makes you so amazing:</p>
+                
+                <div class="memory-item">
+                    <strong>Your presence -</strong> Even when you're not around, just the thought of you makes everything feel a little brighter.
+                </div>
+                
+                <div class="memory-item">
+                    <strong>The way you care -</strong> You remember little things about me that no one else notices
+                </div>
+                
+                <div class="memory-item">
+                    <strong>Your words -</strong> You always know what to say, whether it's to calm me down, lift me up, or make me laugh.
+                </div>
+
+                <div class="memory-item">
+                    <strong>Your love -</strong> The way you show it, in both loud and quiet ways, makes me feel seen, safe, and genuinely loved.
+                </div>
+                
+                <div class="memory-item">
+                    <strong>Honestly? Everything about you is special -</strong> From the way you smile to the way you care, you’re one of a kind, and I’m so lucky to have you.
+                </div>
+                <p>I know I'm not perfect, but you make me want to be better. That's how special you are.</p>
+            </div>
+            
+            <div class="tab-content" id="tab2">
+                <h2>What's Really On My Mind</h2>
+                <p>Honestly? Three months in and I still get excited seeing your name pop up on my phone.</p> 
+                
+                <p>Our first meet in November - I knew you were different.<br>
+                That April day you said yes? Changed everything for me.</p>
+                
+                <p>Happy 3rd monthsary, baby. I know I made you something for our monthsary, the notebook, recorded tape, and some notes that I sent sa place mo. But I just want to add something different lang, so eto. I just want to say... thank you. Thank you for loving me despite everything, for staying, for understanding me even when I don’t make sense sometimes. Alam kong hindi ako perfect, and I mess up, pero I’m always trying.. trying to be better for you, for us.</p>
+                
+                <p>Three months pa lang, pero ang dami na nating napagdaanan. And still, here we are. I’m happy that it’s you I get to call mine. I love you so much, sobra. Hindi ko man masabi lagi in words, pero I hope nararamdaman mo yun sa lahat ng ginagawa ko.</p>
+                
+                <p>And if ever you’re reading this on our monthsary, and di pa rin tayo nagkakabalikan… I hope this reminds you how much I still choose you. Come back to me, baby. Let’s not waste what we’ve built. You know in your heart that it’s still me.. that it’s still us. And just know that no matter what, I’m still here. Waiting. Fighting. Loving you silently, consistently, and with all I’ve got.</p>
+
+                <p>Here’s to more months, more memories, and more moments na tayong dalawa lang. Happy 3rd monthsary, love. ❤️</p>
+            </div>
+            
+            <div class="tab-content" id="tab3">
+                <h2>Just For My Babyyy</h2>
+                <p>This part's only for you - our little inside world.</p>
+                
+                <div class="sticker-box">
+                    <div class="sticker">(｡♥‿♥｡)</div>
+                    <div class="sticker">♡(˃͈ દ ˂͈ ༶ )</div>
+                    <div class="sticker">✧･ﾟ: *✧･ﾟ:* (◠‿◠✿)*:･ﾟ✧*:･ﾟ✧</div>
+                </div>
+                
+                <p>Next time na magkasama na talaga tayo, I've got a real surprise for you.<br>
+                Until then... know I'm counting down the days.</p>
+            </div>
+
+            <div class="tab-content" id="tab4"> 
+                <h2>Just Us on Video Call</h2>
+                <p>Here are some of our favorite moments together on video calls!</p>
+                
+                <div class="photo-gallery">
+                    <img src="https://i.postimg.cc/zv800Frt/IMG-6007.avif" alt="Video Call Photo 1">
+                    <img src="https://i.postimg.cc/YCRRCWQY/IMG-5510.avif" alt="Video Call Photo 2">
+                    <img src="https://i.postimg.cc/jqDF3ZP9/IMG-6013-Copy.avif" alt="Video Call Photo 3">
+                    <img src="https://i.postimg.cc/q7m1j3R4/IMG-5526.avif" alt="Video Call Photo 4">
+                    <img src="https://i.postimg.cc/GmdzRQTb/IMG-5515.avif" alt="Video Call Photo 5">
+                    <img src="https://i.postimg.cc/BQWMYsqL/IMG-5522.avif" alt="Video Call Photo 6">
+                    <img src="https://i.postimg.cc/pLHcTv4b/IMG-6010.avif" alt="Video Call Photo 7">
+                    <img src="https://i.postimg.cc/8cvwpXbz/IMG-6005.avif" alt="Video Call Photo 8">
+                    <img src="https://i.postimg.cc/kMLh0Ky5/IMG-6011.avif" alt="Video Call Photo 9">
+                    <img src="https://i.postimg.cc/nckB4tMt/Screenshot-177.png" alt="Video Call Photo 10">
+                    <img src="https://i.postimg.cc/FR3J1Mw8/Screenshot-182.png" alt="Video Call Photo 11">
+                    <img src="https://i.postimg.cc/HLJM1czp/Screenshot-195.png" alt="Video Call Photo 12">
+                </div>
+                <p>More memories to come!</p>
+            </div>
+        </div>
+        
+        <footer>
+            Just for you ❤️<br>
+            - Love, Ivan
+        </footer>
+    </div>
+
+    <script>
+        function updateDayCounter() {
+            const startDate = new Date('2025-04-20');
+            const today = new Date();
+            const timeDiff = today - startDate;
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            document.getElementById('dayCounter').textContent = `${daysDiff} days since you said yes`;
+        }
+        
+        // Change tabs when clicked
+        function changeTab(tabIndex) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Deactivate all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Activate selected tab and content
+            document.getElementById(`tab${tabIndex + 1}`).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        
+        updateDayCounter();
+        setInterval(updateDayCounter, 86400000);
+    </script>
+</body>
+</html>
