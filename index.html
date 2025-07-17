@@ -154,6 +154,37 @@
             transform: scale(1.05);
         }
 
+        /* Heart-shaped collage styles */
+        .heart-collage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Made images smaller */
+            gap: 10px; /* Adjusted gap */
+            width: 100%;
+            max-width: 760px; /* Increased max-width to fit container */
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            /* Using clip-path for a heart shape - significantly scaled up coordinates */
+            clip-path: path('M400,200 C600,0 800,200 400,600 C0,200 200,0 400,200');
+            background-color: var(--pink); /* Background for the heart shape */
+            padding: 20px; /* Increased padding */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1 / 1; /* Maintain aspect ratio for the heart container */
+        }
+
+        .heart-collage-container img {
+            width: 100%;
+            height: 100px; /* Decreased image height within the heart */
+            object-fit: cover;
+            border-radius: 8px; /* Slightly larger border-radius */
+            transition: transform 0.3s ease;
+        }
+
+        .heart-collage-container img:hover {
+            transform: scale(1.1);
+        }
+
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -207,6 +238,13 @@
             .photo-gallery {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
+
+            .heart-collage-container {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Even smaller for mobile */
+                /* Adjusted for smaller screens, scaled up from original mobile size */
+                clip-path: path('M200,100 C300,0 400,100 200,300 C0,100 100,0 200,100');
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
         }
     </style>
 </head>
@@ -228,7 +266,8 @@
             <div class="tab" onclick="changeTab(2)">Just For You</div>
             <div class="tab" onclick="changeTab(3)">Just Us on Video Call</div>
             <div class="tab" onclick="changeTab(4)">Us on Online Games</div>
-            <div class="tab" onclick="changeTab(5)">Emotional Message</div> <!-- NEW TAB ADDED HERE -->
+            <div class="tab" onclick="changeTab(5)">Emotional Message</div>
+            <div class="tab" onclick="changeTab(6)">Hart Hart</div> <!-- NEW TAB ADDED HERE -->
         </div>
         
         <div class="section">
@@ -307,11 +346,11 @@
                     <img src="https://i.postimg.cc/HLJM1czp/Screenshot-195.png" alt="Video Call Photo 12">
                     <img src="https://i.postimg.cc/LXZ18CW5/Screenshot-1346.png" alt="Video Call Photo 13">
                     <img src="https://i.postimg.cc/pXBnrnsf/Screenshot-1347.png" alt="Video Call Photo 14">
-                    <img src="https://i.postimg.cc/wxLNKrJb/Screenshot-1349.png" alt="Video Call Photo 15">
-                    <img src="https://i.postimg.cc/hPndK014/Screenshot-1351.png" alt="Video Call Photo 16">
-                    <img src="https://i.postimg.cc/CxLnqL2W/Screenshot-1358.png" alt="Video Call Photo 17">
-                    <img src="https://i.postimg.cc/43jYqv3g/Screenshot-1359.png" alt="Video Call Photo 18">
-                    <img src="https://i.postimg.cc/13Cnc1h4/Screenshot-1373.png" alt="Video Call Photo 19">
+                    <img src="https://i.postimg.cc/wxLNKrJb/Screenshot-1349.png" alt="Memory 15">
+                    <img src="https://i.postimg.cc/hPndK014/Screenshot-1351.png" alt="Memory 16">
+                    <img src="https://i.postimg.cc/CxLnqL2W/Screenshot-1358.png" alt="Memory 17">
+                    <img src="https://i.postimg.cc/43jYqv3g/Screenshot-1359.png" alt="Memory 18">
+                    <img src="https://i.postimg.cc/13Cnc1h4/Screenshot-1373.png" alt="Memory 19">
                     <img src="https://i.postimg.cc/RZMVDsQf/Screenshot-1341.png">
                     <img src="https://i.postimg.cc/hvWKbptX/Screenshot-1342.png">
                     <img src="https://i.postimg.cc/8kMpPQZM/Screenshot-1343.png">
@@ -403,6 +442,88 @@
 
                 <p>-Me, still and always yours.</p>
             </div>
+
+            <!-- NEW TAB CONTENT FOR HEART COLLAGE -->
+            <div class="tab-content" id="tab7">
+                <h2>Love Forever and Always</h2>
+                <p>In a sea of people, my eyes will always search for you ❤️</p>
+                <div class="heart-collage-container">
+                    <!-- Replace with your actual image URLs -->
+                    <img src="https://i.postimg.cc/Kv2BYw7p/att-cu-G3-CES88a-ACEUZDIYjjjhmx-S99-MJOTj-B7-Jahq-WF2g.jpg" alt="Memory 1">
+                    <img src="https://i.postimg.cc/YqzgLRbr/att-d-Bdpq-Npzt4-gwyg-J9e-AXFt4-Lvn-YDHn-Q1f-IQjm-INm1-Nc.jpg" alt="Memory 2">
+                    <img src="https://i.postimg.cc/jqDF3ZP9/IMG-6013-Copy.avif" alt="Memory 3">
+                    <img src="https://i.postimg.cc/qB86WQfs/att-d-Jd3-NKI1ny-XN1-WGq-F6hq2t6drn-CTSj8-Bp-c-Tluih-A44.jpg" alt="Memory 4">
+                    <img src="https://i.postimg.cc/52PCnthD/att-GSRw-Y3-Lfa-O20rf-Goq3-Wt8-Ta2-MUIGm0-Ii-SQ64k-S4-UEHk.jpg" alt="Memory 5">
+                    <img src="https://i.postimg.cc/Jz7XNX2b/att-Jr-ZHf0h-OS1-G2-KOHPmz-Bu-Wpo23-DN5jw-IIm0t4ux-BLk-JI.jpg" alt="Memory 6">
+                    <img src="https://i.postimg.cc/rpKtbkcs/att-Km3oo-OTVA5-R23mv-U5-Hnfh-SQm-Xk-K4p-MGi-Lr-Yn-OL0-JL8.jpg" alt="Memory 7">
+                    <img src="https://i.postimg.cc/3RG08FkH/att-Ksnd-Cv-QR7-BD7-BBzr-JNq-LNc-XM7-IXb29p-Xqmp-Wer-JCcf8.jpg" alt="Memory 8">
+                    <img src="https://i.postimg.cc/W4CJcHbn/att-n-K0n-RG6-U66r-Hs-Fxcn-UX5-bja-Ve3cy8-UZvgy-Rv85k-XZM.jpg" alt="Memory 9">
+                    <img src="https://i.postimg.cc/zfs3cH02/att-O5j-Cc-R-g-Ffl-Mcjf-R2-L-d1-Gb-Frkyie-Vt-8o-FBux-J17-Y.jpg" alt="Memory 10">
+                    <img src="https://i.postimg.cc/tJyJXQ0h/att-s-UQAn-OBq-gy-JPol-1l-Slf5-Tkg-TJ5f-F696ts0j-RMo2-Qw.jpg" alt="Memory 11">
+                    <img src="https://i.postimg.cc/gksX2J2r/att-v-D0j-Mp-Mhtt-GA-PH92-Ny6-Sm-Xr-ISrpn3d3-Pdb-I4b-KNOuo.jpg" alt="Memory 12">
+                    <img src="https://i.postimg.cc/LsYnD3BZ/att-WFQXo-Vba9-OEVju-77-Fq-EW1s-L4-BRBGpfo-Bjw-Ri-pt-S-Q.jpg" alt="Memory 13">
+                    <img src="https://i.postimg.cc/qR2gVBFJ/att-zind-HOPz-1-AZO6yh8-W45-PRf-Wb-Lb82v-JXT3z2i-N28-Qk.jpg" alt="Memory 14">
+                    <img src="https://i.postimg.cc/D0gZ0jFR/att-zm-HGFJS8-YHGc7-Tj5-Kvsu-P-Eh9-5-MYB829-C-4-Sc-Rp-G3-Y.jpg" alt="Memory 15">
+                    <img src="https://i.postimg.cc/mZNhmDMV/BA175-ECB-FB5-E-40-C3-864-A-1-A3-F309-CDE1-E.jpg" alt="Memory 16">
+                    <img src="https://i.postimg.cc/65MqNmMv/DBA59-AD2-4271-46-AE-AE5-A-31-C55148-C326.jpg" alt="Memory 17">
+                    <img src="https://i.postimg.cc/K8VY1gSc/IMG-1394.png" alt="Memory 18">
+                    <img src="https://i.postimg.cc/fLqqsZSP/IMG-20241127-172339-457.jpg" alt="Memory 19">
+                    <img src="https://i.postimg.cc/Vv37SRRB/IMG-20241223-195354-333.jpg">
+                    <img src="https://i.postimg.cc/J7gYdrLD/IMG-20241223-195450-199.jpg">
+                    <img src="https://i.postimg.cc/ZYcKrQtM/IMG-5209.jpg">
+                    <img src="https://i.postimg.cc/8PG17KY3/Screenshot-1345.png">
+                    <img src="https://i.postimg.cc/yY86nT7Y/IMG-5211.jpg">
+                    <img src="https://i.postimg.cc/02Xk4JNG/IMG-5213.jpg">
+                    <img src="https://i.postimg.cc/L6WSDKyN/IMG-5269.jpg">
+                    <img src="https://i.postimg.cc/xCfBYtxX/IMG-5580.png">
+                    <img src="https://i.postimg.cc/DZ5kbtJQ/IMG-5753.jpg">
+                    <img src="https://i.postimg.cc/WpWcpcPT/IMG-5789.jpg">
+                    <img src="https://i.postimg.cc/fTVnJqwX/IMG-5790.jpg">
+                    <img src="https://i.postimg.cc/j5MmjPmZ/IMG-5912.jpg">
+                    <img src="https://i.postimg.cc/YSjTsY4M/2025-05-11-12-49-18-Copy.png">
+                    <img src="https://i.postimg.cc/C5MGcH14/2025-05-11-12-50-14-Copy.png">
+                    <img src="https://i.postimg.cc/W4rwz1C0/2025-05-11-12-53-04-Copy.png">
+                    <img src="https://i.postimg.cc/FHYZtZxW/2025-05-12-13-03-25-Copy.png">
+                    <img src="https://i.postimg.cc/Y9RgLG3L/2025-05-12-17-36-24-Copy.png">
+                    <img src="https://i.postimg.cc/gjMvQXLb/2025-05-12-17-37-41-Copy.png">
+                    <img src="https://i.postimg.cc/7ZSR2pjC/IMG-6041.jpg">
+                    <img src="https://i.postimg.cc/6Q01HCWt/IMG-6127.jpg">
+                    <img src="https://i.postimg.cc/7LvSFyhh/Screenshot-81-Copy.png">
+                    <img src="https://i.postimg.cc/PxSp5GXm/Screenshot-82.png">
+                    <img src="https://i.postimg.cc/28MWWf4G/Screenshot-90-Copy.png">
+                    <img src="https://i.postimg.cc/yW4P6N1L/SNOW_20241128_002849_874.jpg">
+                    <img src="https://i.postimg.cc/J0qLLmRL/Screenshot-1316.png">
+                    <img src="https://i.postimg.cc/C1pTnd10/Screenshot-1317.png">
+                    <img src="https://i.postimg.cc/XvC6v9nx/Screenshot-1319.png">
+                    <img src="https://i.postimg.cc/WzsBSKgf/Screenshot-1320.png">
+                    <img src="https://i.postimg.cc/2SdH6nBh/SNOW_20241127_214700_070.jpg">
+                    <img src="https://i.postimg.cc/yYQMXLdv/Screenshot-1327.png">
+                    <img src="https://i.postimg.cc/sDX8X5cS/Screenshot-1329.png">
+                    <img src="https://i.postimg.cc/LX2QMP5J/Screenshot-1330.png">
+                    <img src="https://i.postimg.cc/Vvbgct8S/SNOW_20241128_002654_562.jpg">
+                    <img src="https://i.postimg.cc/XqZJNpDb/Screenshot-120.png">
+                    <img src="https://i.postimg.cc/V6Zvcjgg/Screenshot-138.png">
+                    <img src="https://i.postimg.cc/25mVdj3Q/Screenshot-135.png">
+                    <img src="https://i.postimg.cc/0jM97hvR/Screenshot-186.png">
+                    <img src="https://i.postimg.cc/13ZyNWY2/Screenshot-187.png">
+                    <img src="https://i.postimg.cc/252844sY/Screenshot-185.png">
+                    <img src="https://i.postimg.cc/mkqP7QFk/Screenshot-98.png">
+                    <img src="https://i.postimg.cc/mZQZjWfV/Screenshot-1284.png">
+                    <img src="https://i.postimg.cc/dtwsSNJF/Screenshot-1286.png">
+                    <img src="https://i.postimg.cc/SxtmRyCQ/Screenshot-1288.png">
+                    <img src="https://i.postimg.cc/x8Y2hqD5/Screenshot-1289.png">
+                    <img src="https://i.postimg.cc/9QSjVLHr/Screenshot-1298.png">
+                    <img src="https://i.postimg.cc/qMyK25jd/Screenshot-247.png">
+                    <img src="https://i.postimg.cc/jq8gGLbj/Screenshot-1356.png">
+                    <img src="https://i.postimg.cc/ncgdhgMb/Screenshot-1364.png">
+                    <img src="https://i.postimg.cc/44DYBQSb/Screenshot-1292.png">
+                    <img src="https://i.postimg.cc/26BzZPrp/Screenshot-1295.png">
+                    <img src="https://i.postimg.cc/9QSK7zMM/Screenshot-1355.png">
+                    <img src="https://i.postimg.cc/SRrH2r2F/Screenshot-1353.png">
+                    <img src="https://i.postimg.cc/T3GpXYGK/Screenshot-1293.png">
+                </div>
+                <p>You're my Favorite ❤️</p>
+            </div>
         </div>
         
         <footer>
@@ -417,7 +538,7 @@
             const today = new Date();
             const timeDiff = today - startDate;
             const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            document.getElementById('dayCounter').textContent = `${daysDiff} days since you said yes`;
+            document.querySelector('.counter').textContent = `${daysDiff} days since you said yes`;
         }
         
         // Change tabs when clicked
@@ -434,11 +555,18 @@
             
             // Activate selected tab and content
             document.getElementById(`tab${tabIndex + 1}`).classList.add('active');
-            event.currentTarget.classList.add('active');
+            // The event.currentTarget is not available when calling from setInterval or initial load
+            // So we need to find the tab element by its index
+            document.querySelectorAll('.tab')[tabIndex].classList.add('active');
         }
         
         updateDayCounter();
         setInterval(updateDayCounter, 86400000);
+
+        // Set the initial active tab on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            changeTab(0); // Activates the first tab by default
+        });
     </script>
 </body>
 </html>
