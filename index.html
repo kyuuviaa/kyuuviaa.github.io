@@ -216,6 +216,15 @@
             margin: 15px 0;
             border-radius: 8px;
         }
+
+        /* New style for the big message */
+        .big-message {
+            font-size: 2.5rem; /* Make it big */
+            font-weight: bold;
+            text-align: center;
+            color: var(--dark-pink); /* Sync with theme color */
+            padding: 30px 0;
+        }
         
         @media (max-width: 600px) {
             .container {
@@ -245,6 +254,10 @@
                 clip-path: path('M200,100 C300,0 400,100 200,300 C0,100 100,0 200,100');
                 padding: 10px; /* Adjust padding for smaller screens */
             }
+
+            .big-message {
+                font-size: 1.8rem; /* Adjust for smaller screens */
+            }
         }
     </style>
 </head>
@@ -268,6 +281,7 @@
             <div class="tab" onclick="changeTab(4)">Us on Online Games</div>
             <div class="tab" onclick="changeTab(5)">Emotional Message</div>
             <div class="tab" onclick="changeTab(6)">Hart Hart</div> <!-- NEW TAB ADDED HERE -->
+            <div class="tab" onclick="changeTab(7)">Mwaa mwaaa</div> <!-- NEW TAB ADDED HERE -->
         </div>
         
         <div class="section">
@@ -364,7 +378,7 @@
                     <img src="https://i.postimg.cc/pd5Q1JHf/Screenshot-260.png">
                     <img src="https://i.postimg.cc/NGk6V0Wz/Screenshot-261.png">
                 </div>
-                <p>Never felt more at home when I'm with you.</p>
+                <p>More memories to come!</p>
             </div>
 
             <div class="tab-content" id="tab5">
@@ -446,7 +460,7 @@
             <!-- NEW TAB CONTENT FOR HEART COLLAGE -->
             <div class="tab-content" id="tab7">
                 <h2>Love Forever and Always</h2>
-                <p>If home was a person, It would be you. ❤️</p>
+                <p>In a sea of people, my eyes will always search for you ❤️</p>
                 <div class="heart-collage-container">
                     <!-- Replace with your actual image URLs -->
                     <img src="https://i.postimg.cc/Kv2BYw7p/att-cu-G3-CES88a-ACEUZDIYjjjhmx-S99-MJOTj-B7-Jahq-WF2g.jpg" alt="Memory 1">
@@ -523,6 +537,13 @@
                     <img src="https://i.postimg.cc/T3GpXYGK/Screenshot-1293.png">
                 </div>
                 <p>You're my Favorite ❤️</p>
+            </div>
+
+            <!-- NEW TAB CONTENT FOR MONTHSARY GREETING -->
+            <div class="tab-content" id="tab8">
+                <div class="big-message">
+                    Happy Monthsary, My love. I love you so muchh
+                </div>
             </div>
         </div>
         
